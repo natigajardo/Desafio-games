@@ -21,17 +21,14 @@
         <td>
           <%= link_to game01.rule.filename, rails_blob_path(game01.rule, disposition: 'attachment') %>
         </td>
-        <td>
-          <%#= image_tag(game01.cover) %>     
-          <%= image_tag(game01.cover, class: "image-cover") %>     
-          <%#= image_tag game01.cover.variant(resize: "100x100", type: :grayscale) %>
+        <td>    
+          <%#= image_tag(game01.cover, class: "image-cover") %>     
+          <%= image_tag game01.cover.variant(resize: "100x100", type: :grayscale) %>
         </td>
         <td>
-          <%#= game01.pieces %>
           <% game01.pieces.each do |p| %>
-            <%#= image_tag(p) %>
-            <%= image_tag(p, class: "image-pieces")  %>
-            <%#= image_tag p.variant(resize: "100x100") %>
+            <%#= image_tag(p, class: "image-pieces")  %>
+            <%= image_tag p.variant(resize: "100x100", type: :grayscale) %>
           <% end %>
         </td>
 
